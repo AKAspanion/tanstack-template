@@ -16,12 +16,27 @@ const usersRoute = rootRoute.createRoute({
   component: React.lazy(() => import("../views/users")),
 });
 
+const postsRoute = rootRoute.createRoute({
+  path: "/posts",
+  component: React.lazy(() => import("../views/posts")),
+});
+
+const createRoute = postsRoute.createRoute({
+  path: "/create",
+  component: React.lazy(() => import("../views/posts/create")),
+});
+
 const aboutRoute = rootRoute.createRoute({
   path: "/about",
   component: React.lazy(() => import("../views/about")),
 });
 
-const routeConfig = rootRoute.addChildren([indexRoute, usersRoute, aboutRoute]);
+const routeConfig = rootRoute.addChildren([
+  indexRoute,
+  usersRoute,
+  aboutRoute,
+  postsRoute.addChildren([createRoute]),
+]);
 
 const router = createReactRouter({ routeConfig });
 

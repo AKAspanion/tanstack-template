@@ -1,4 +1,3 @@
-import axios from "axios";
+import { axiosInstance } from "@api";
 
-export const getUsers = () =>
-  axios.get("https://jsonplaceholder.typicode.com/users");
+export const getUsers = () => axiosInstance.get<User[]>("/users");

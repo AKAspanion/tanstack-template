@@ -1,4 +1,5 @@
 import { useUsersQuery } from "@query/queries/users";
+import "./users.css";
 
 function Users() {
   const { status, data, error } = useUsersQuery();
@@ -13,11 +14,18 @@ function Users() {
 
   return (
     <div>
-      <h3>These are our users!</h3>
-      {data?.data &&
-        data?.data.map((u: any) => {
-          return <div>{u?.name || "-"}</div>;
-        })}
+      <div className="user-card-container">
+        {data?.data &&
+          data?.data?.map((u, i) => {
+            return (
+              <div className="user-card" key={i}>
+                <div className="user-card-title">{u?.name || "-"}</div>
+                <div className="user-card-body">{u?.email || "-"}</div>
+                <div className="user-card-body">{u?.website || "-"}</div>
+              </div>
+            );
+          })}
+      </div>
     </div>
   );
 }

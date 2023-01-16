@@ -6,7 +6,7 @@ const Root = () => (
   <>
     <div>
       <Link to="/">Home</Link> ┊ <Link to="/users">Users</Link> ┊{" "}
-      <Link to="/about">About</Link>
+      <Link to="/posts">Posts</Link> ┊ <Link to="/about">About</Link>
     </div>
     <hr />
     <Outlet />

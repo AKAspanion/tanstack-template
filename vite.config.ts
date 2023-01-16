@@ -10,5 +10,9 @@ export default defineConfig({
       { find: "@query", replacement: path.resolve(__dirname, "src/query") },
     ],
   },
+  server: {
+    port: 3000,
+    open: true,
+  },
   plugins: [react()],
 });

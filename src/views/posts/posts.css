@@ -1,0 +1,23 @@
+.post-card-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 16px 0px;
+}
+
+.post-card {
+  text-align: left;
+  padding: 12px;
+  border-radius: 8px;
+  border: 0.5px solid #484848;
+}
+
+.post-card-title {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.post-card-body {
+  font-size: 13px;
+}
